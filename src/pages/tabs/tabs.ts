@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { HomePage } from '../home/home';
 import { ContactPage } from '../contact/contact';
 import { AboutPage } from '../about/about';
+import { tabRoot } from './tabRoot';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  tabRoots: Object[];
+  tabRoots: tabRoot[];
 
   constructor() {
     this.initializeTabRoots();
