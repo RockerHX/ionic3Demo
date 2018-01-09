@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 
@@ -16,8 +16,7 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public modalCtrl: ModalController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
@@ -29,9 +28,10 @@ export class LoginPage {
     } else if (password.value.length == 0) {
       alert("请输入密码");
     } else {
-      // let userinfo = 'username:' + username.value + 'password:' + password.value;
+      // let userinfo: string = '用户名：' + username.value + '密码：' + password.value;
       // alert(userinfo);
-      this.navCtrl.push(TabsPage);
+      let modal = this.modalCtrl.create(TabsPage);
+      modal.present();
     }
   }
 

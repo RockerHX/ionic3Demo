@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { ContactPage } from '../contact/contact';
+import { SettingPage } from '../setting/setting';
 import { AboutPage } from '../about/about';
+
 import { tabRoot } from './tabRoot';
 
 @Component({
@@ -28,9 +29,9 @@ export class TabsPage {
         tabIcon: 'notifications'
       },
       {
-        root: ContactPage,
-        tabTitle: 'About',
-        tabIcon: 'document'
+        root: SettingPage,
+        tabTitle: 'Setting',
+        tabIcon: 'person'
       }
     ];
   }

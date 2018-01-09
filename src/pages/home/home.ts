@@ -1,14 +1,25 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { Http, Response } from '@angular/http';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  listData: Object;
 
+  constructor(public navCtrl: NavController, private http: Http) {
+
+  }
+
+  ionViewDidLoad(){
+   this.http.request('http://jsonplaceholder.typicode.com/photos?_page=1')
+   .subscribe((res: Response) => {
+      this.listData = res.json();
+   });
   }
 
 }
